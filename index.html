@@ -3,16 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Burton | Back-end developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Abel&family=Rancho&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>George Burton | Web developer | Sustainable finance | ESG</title>
 </head>
 <body>
-    <h1>Welcome to my portfolio!</h1>
-    <p>You should hire me because I'm cool.</p>
-    <h2>Here's is where you can see all my projects:</h2>
-    <ul>
-        <li><a href="http://coolsite1.com">Cool site 1</a></li>
-        <li><a href="http://coolsite2.com">Cool site 2</a></li>
-        <li><a href="http://coolsite3.com">Cool site 3</a></li>
-    </ul>
+    <!-- Introductory headline of what I can offer a prospective employer -->
+    <h1>Python. Django. JavaScript. React. IFRS FSA Certified. ESG SaaS experience.</h1>
+    <p>Hello! I am a multidisciplinary developer driven to ship software that enables enterprises to succeed in the emerging International Sustainability Standards Board (ISSB) reporting ecosystem.</p>
+
+    <h2>My toolkit:</h2>
+
+    <!-- Section for language and framework logos: -->
+    <div class="logos" id="logos">
+        <img src="img/icons8-python.svg" alt="Python Logo">
+        <img src="img/icons8-django.svg" alt="Django Logo">
+        <img src="img/icons8-javascript.svg" alt="JavaScript Logo">
+        <img src="img/icons8-react.svg" alt="React Logo">
+        <img src="img/icons8-html5.svg" alt="HTML Logo">
+        <img src="img/icons8-css3.svg" alt="CSS Logo">
+    </div>
+    
+    <!-- Section for the bios of portfolio pieces: -->
+    <h2>A collection of my environmental, social and governance (ESG) software projects:</h2>
+
+    <section class="projects" id="project1">
+        <div class="project-text">
+            <h3><a href="http://coolsite1.com">Project 1</a></h3>
+            <p>A web application that helps employees record and export their carbon emissions from business travel.</p>
+        </div>
+        <img src="img/Project1.png" alt="Project 1 Graphic" class="project-graphic">
+    </section>  
+
+    <section class="projects" id="project2">
+        <div class="project-text">
+            <h3><a href="http://coolsite2.com">Project 2</a></h3>
+            <p>A web application that informs local authorities in the UK when is the least Carbon intensive time to consume electricity from the Grid.</p>
+        </div>
+        <img src="img/Project2.png" alt="Project 2 Graphic" class="project-graphic">
+    </section>
+
+    <section class="projects" id="project3">
+        <div class="project-text">
+            <h3><a href="http://coolsite3.com">Project 3</a></h3>
+            <p>A web application that x.</p>
+        </div>
+        <img src="img/Project3.png" alt="Project 3 Graphic" class="project-graphic">
+    </section>
+
+    <section class="projects" id="project4">
+        <div class="project-text">
+            <h3><a href="http://coolsite4.com">Project 4</a></h3>
+            <p>Proco is an API, Salesforce app and Google Chrome extension. This solution saves salespeople time by delivering environmental, social and governance (ESG) related sales intelligence into habituated sales processes and software.</p>
+        </div>
+        <img src="img/Project4.png" alt="Project 4 Graphic" class="project-graphic">
+    </section>
+
+    <!-- Contact section -->
+    <div id="contact-container">
+        <!-- Contact form container -->
+        <div id="contact-form-container">
+            <h2>Get in touch:</h2>
+            <!-- Contact form -->
+            <div id="contact-form">
+                <p>I'd love to hear from you!:</p>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <br>
+
+                    <button type="submit">Send message</button>
+                </form>
+            </div>
+        </div>  
+        <!-- Links to LinkedIn and Github -->
+        <div>
+            <ul>
+                <li><a href="">LinkedIn</a></li>
+                <li><a href="https://github.com/gburton20">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+
 </body>
+
+<footer>
+    <script src="script.js"></script>
+</footer>
+
 </html>

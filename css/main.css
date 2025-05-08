@@ -1,0 +1,47 @@
+/* Hex code for the ISSB red: #A41F35 */
+/* Hex code for the colour opposite on the colour wheel to the ISSB red: #1FA48E */
+/* See for further reference: https://www.canva.com/colors/color-wheel/ */
+
+body {
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin-bottom: 40px;
+}
+
+.project-text {
+    border-color: #a41f35;
+    border-width: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#project-text1 {
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+#project-text2 {
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+}
+#project-text3 {
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+}
+#project-text4 {
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+}

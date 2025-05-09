@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,19 @@
     <link rel="stylesheet" href="css/main.css">
     <title>George Burton | Web developer | Sustainable finance | ESG</title>
 </head>
+
 <body>
+    <!-- Header section -->
+     <header>
+        <nav>
+            <ul>
+                <li><a href="#logos">My toolkit</a></li>
+                <li><a href="#projects-container">Projects</a></li>
+                <li><a href="#contact-container">Contact</a></li>
+            </ul>
+        </nav>
+     </header>
+
     <!-- Introductory headline of what I can offer a prospective employer -->
     <h1>Python. Django. JavaScript. React. IFRS FSA Certified. ESG SaaS experience.</h1>
     <p>Hello! I am a multidisciplinary developer driven to ship software that enables enterprises to succeed in the emerging International Sustainability Standards Board (ISSB) reporting ecosystem.</p>
@@ -27,39 +40,41 @@
     </div>
     
     <!-- Section for the bios of portfolio pieces: -->
-    <h2>A collection of my environmental, social and governance (ESG) software projects:</h2>
+    <div id="projects-container">
+        <h2>A collection of my projects:</h2>
 
-    <section class="projects" id="project1">
-        <div class="project-text">
-            <h3><a href="http://coolsite1.com">Project 1</a></h3>
-            <p>A web application that helps employees record and export their carbon emissions from business travel.</p>
-        </div>
-        <img src="img/Project1.png" alt="Project 1 Graphic" class="project-graphic">
-    </section>  
+        <section class="projects" id="project1">
+            <div class="project-text">
+                <h3><a href="http://coolsite1.com">Co2 calculator</a></h3>
+                <p>A web application that helps employees record and export their carbon emissions from business travel.</p>
+            </div>
+            <img src="img/carbon-footprint-icon.svg" alt="Project 1 Graphic" class="project-graphic">
+        </section>  
 
-    <section class="projects" id="project2">
-        <div class="project-text">
-            <h3><a href="http://coolsite2.com">Project 2</a></h3>
-            <p>A web application that informs local authorities in the UK when is the least Carbon intensive time to consume electricity from the Grid.</p>
-        </div>
-        <img src="img/Project2.png" alt="Project 2 Graphic" class="project-graphic">
-    </section>
+        <section class="projects" id="project2">
+            <div class="project-text">
+                <h3><a href="http://coolsite2.com">Carbon intensity tool</a></h3>
+                <p>A web application that informs local authorities in the UK when is the least Carbon intensive time to consume electricity from the Grid.</p>
+            </div>
+            <img src="img/Electricity grid.png" alt="Project 2 Graphic" class="project-graphic">
+        </section>
 
-    <section class="projects" id="project3">
-        <div class="project-text">
-            <h3><a href="http://coolsite3.com">Project 3</a></h3>
-            <p>A web application that x.</p>
-        </div>
-        <img src="img/Project3.png" alt="Project 3 Graphic" class="project-graphic">
-    </section>
+        <section class="projects" id="project3">
+            <div class="project-text">
+                <h3><a href="http://coolsite3.com">Project 3</a></h3>
+                <p>A web application that x.</p>
+            </div>
+            <img src="img/Project3.png" alt="Project 3 Graphic" class="project-graphic">
+        </section>
 
-    <section class="projects" id="project4">
-        <div class="project-text">
-            <h3><a href="http://coolsite4.com">Project 4</a></h3>
-            <p>Proco is an API, Salesforce app and Google Chrome extension. This solution saves salespeople time by delivering environmental, social and governance (ESG) related sales intelligence into habituated sales processes and software.</p>
-        </div>
-        <img src="img/Project4.png" alt="Project 4 Graphic" class="project-graphic">
-    </section>
+        <section class="projects" id="project4">
+            <div class="project-text">
+                <h3><a href="http://coolsite4.com">Project 4</a></h3>
+                <p>Proco is an API, Salesforce app and Google Chrome extension. This solution saves salespeople time by delivering environmental, social and governance (ESG) related sales intelligence into habituated sales processes and software.</p>
+            </div>
+            <img src="img/Project4.png" alt="Project 4 Graphic" class="project-graphic">
+        </section>
+    </div>
 
     <!-- Contact section -->
     <div id="contact-container">
@@ -102,3 +117,4 @@
 </footer>
 
 </html>
+

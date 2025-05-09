@@ -39,10 +39,13 @@ nav li {
     /* background-color: #1FA48E; */
     margin-bottom: 40px;
     max-width: 50%;
+    padding: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .project-text {
-    border-color: #a41f35;
+    border: coral, solid 2px;
     border-width: 2px;
     display: flex;
     flex-wrap: wrap;
@@ -50,6 +53,7 @@ nav li {
 }
 
 .project-graphic {
+    border: blue, solid 2px;
     width: 100%;
     height: auto;
     border-radius: 10px;

@@ -2,60 +2,23 @@
 /* Hex code for the colour opposite on the colour wheel to the ISSB red: #1FA48E */
 /* See for further reference: https://www.canva.com/colors/color-wheel/ */
 
+/* Base (Mobile) */
 body {
-    background-color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 20px;
+  font-size: ;
+
 }
 
-nav {
-    display: flex;
-    justify-content: flex-end;
-    background-color: #1FA48E;
-    padding: 10px;
-    text-align: center;
-    list-style-type: none;
+/* Media queries for tablet and desktop: */
+/* Tablet - median dimensions */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: ;
+  }
 }
 
-nav li {
-    display: inline-flex;
-    align-items: center;
-    margin: 0 20px;
-}
-
-.project-container {
-    display: flex;
-    /* border: #a41f35 solid 2px; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.projects {
-    display: block;
-    border: #a41f35 solid 2px;
-    align-items: center;
-    /* background-color: #1FA48E; */
-    margin-bottom: 40px;
-    max-width: 50%;
-    padding: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.project-text {
-    border: coral, solid 2px;
-    border-width: 2px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.project-graphic {
-    border: blue, solid 2px;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
+/* Desktop - */
+@media (min-width: 1024px) {
+  body {
+    font-size: ;
+  }
 }

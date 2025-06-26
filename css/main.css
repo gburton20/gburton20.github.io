@@ -1,24 +1,100 @@
+
 /* Hex code for the ISSB red: #A41F35 */
 /* Hex code for the colour opposite on the colour wheel to the ISSB red: #1FA48E */
 /* See for further reference: https://www.canva.com/colors/color-wheel/ */
 
-/* Base (Mobile) */
-body {
-  font-size: ;
+/* Base (Mobile) - optimised for iPhone 13 and 14 dimensions - W390-H844  */
 
+body {
+  /* This means that the body is now a flex container. The child items within the body now become flex items. */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  line-height: normal;
+  font-family: Inter;
+  text-align: center;
+  color: #000;
+
+  border: 2px dashed orchid;
 }
+
+/* This div was created to set global CSS rules for the nav bar across mobile, tablet and desktop */
+.Navigation-component {
+  background: rgba(60, 224, 175, 0.75);
+
+  border: 2px dashed green;
+}
+
+.Instance-of-navigation-component-iPhone-13-and-14 {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  height: 90px;
+
+  border: 2px dashed coral;
+}
+
+/* The auto layout group container of the burton-works text */
+.Auto-layout-group-navigation-content-iPhone-13-and-14 {
+  display: flex;
+  width: 152px;
+  height: 42px;
+  max-width: 1000px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+
+  border: 2px dashed blue;
+}
+
+/* The burton-works text */
+.burton-works-title-text {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+
+  border: 2px dashed red;
+}
+
+/* The auto layout group container for the hamburger menu */
+.Auto-layout-group-hamburger-menu-iPhone-13-and-14 {
+  display: flex;
+  width: 39.25px;
+  padding: 10px 5px;
+  position: absolute;
+  top: calc(50% - 14px);
+  left: 312px;
+  width: 39.3px;
+  height: 39.5px;
+  overflow-y: auto;
+  
+
+  border: 2px dashed yellow;
+}
+
+.hamburger-icon {
+  width: 29.25px;
+  height: 19.5px;
+  flex-shrink: 0;
+
+  border: 2px dashed firebrick;
+}
+
+
 
 /* Media queries for tablet and desktop: */
 /* Tablet - median dimensions */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* @media (min-width: 768px) and (max-width: 1023px) {
   body {
     font-size: ;
   }
-}
+} */
 
 /* Desktop - */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   body {
     font-size: ;
   }
-}
+} */

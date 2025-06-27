@@ -23,7 +23,7 @@ body {
 .Navigation-component {
   background: rgba(60, 224, 175, 0.75);
 
-  border: 2px dashed green;
+  /* border: 2px dashed green; */
 }
 
 /* This class of nav element sets the CSS rules for the default mobile web version (mobile-first) */
@@ -34,7 +34,7 @@ body {
   align-items: center;
   height: 90px;
 
-  border: 2px dashed coral;
+  /* border: 2px dashed coral; */
 }
 
 /* The auto layout group container of the burton-works text */
@@ -47,7 +47,7 @@ body {
   align-items: center;
   flex-shrink: 0;
 
-  border: 2px dashed blue;
+  /* border: 2px dashed blue; */
 }
  
 /* The burton-works text */
@@ -55,9 +55,7 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 900;
-  line-height: normal;
-
-  border: 2px dashed red;
+  /* border: 2px dashed red; */
 }
 
 /* The auto layout group container for the hamburger menu */
@@ -74,12 +72,173 @@ body {
   /* border: 2px dashed black; */
 }
 
-.hamburger-icon {
+.hamburger-menu {
   width: 29.25px;
   height: 19.5px;
   flex-shrink: 0;
 
   /* border: 2px dashed firebrick; */
+}
+
+
+/* CSS for the container for all hero content */
+.hero-content-component {
+  /* Transforms all child elements into flex items */
+  background-color: #20C997BF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-style: normal;
+  padding: 25px 20px;
+  flex-shrink: 0;
+  
+  /* border: 2px dashed firebrick; */
+}
+
+.profile-picture-circular-ffffff {
+  display: flex;
+  width: 210px;
+  height: 210px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+
+  /* border: 2px dashed coral; */
+}
+
+.greeting-heading {
+  width: 321px;
+  font-size: 40px;
+  font-weight: 900;
+
+  /* border: 2px dashed black; */
+}
+
+.bio {
+  align-self: stretch;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 38px; /* 135.714% */
+  
+  /* border: 2px dashed firebrick; */
+}
+
+.proco-logo {
+  width: 161.976px;
+  height: 27.45px;
+  flex-shrink: 0;
+
+  /* border: 2px dashed blue; */
+}
+
+
+/* CSS for the container for all Skills list section break content */
+.skills-list-section-break-with-text-component {
+  background-color: #3CE0AFBF;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+
+  /* border: 2px dashed blue; */
+}
+
+.skills-list-section-break-text {
+  flex: 1 0 0;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 38px; /* 111.765% */
+
+  /* border: 2px dashed firebrick; */
+}
+
+
+/* CSS for the container for all Skills list content */
+.skills-list-component {
+  background-color: #20C997BF;
+  display: flex;
+  flex-direction: column;
+  /* padding: 35px 24px; */
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.skill-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 13px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+
+  /* border: 2px dashed black; */
+}
+
+.skills-text {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+
+/* CSS for the container for all Portfolio list section break content */
+.portfolio-list-section-break-with-text-component {
+  background-color: #3CE0AFBF;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+
+  /* border: 2px dashed blue; */
+}
+
+.portfolio-list-section-break-text {
+  flex: 1 0 0;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 38px; /* 111.765% */
+
+  /* border: 2px dashed firebrick; */
+}
+
+
+/* CSS for the container for all Portfolio content */
+.project-card-component {
+  background-color: #20C997BF;
+  display: flex;
+  flex-direction: column;
+  /* padding: 35px 24px; */
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.skill-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 13px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+
+  /* border: 2px dashed black; */
+}
+
+.skills-text {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 

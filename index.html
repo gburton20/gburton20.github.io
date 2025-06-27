@@ -9,20 +9,92 @@
 </head>
 
 <body>
+    <!-- Nav bar -->
     <div class="Navigation-component">
         <nav class="Instance-of-navigation-component-iPhone-13-and-14">
             <div class="Auto-layout-group-navigation-content-iPhone-13-and-14">
                 <h1 class="burton-works-title-text">burton-works</h1>
             </div>
             <div class="Auto-layout-group-hamburger-menu-iPhone-13-and-14">
-                <img class="hamburger-icon" alt="a hamburger menu to open the navigation menu for the home page of the website when opened on a smartphone browser" src="./img/hamburger-menu-icon.svg" id="autoLayoutGroupHamburgerMeIcon">
+                <img class="hamburger-menu" alt="a hamburger menu to open the navigation menu for the home page of the website when opened on a smartphone browser" src="./public/images/hamburger-menu-icon.svg" id="mobile-hamburger-menu-Mobile">
             </div>
         </nav>
-    </div> 
+    </div>
 
-    <h1>Test for the body constructor line</h1>
+    <!-- Introductory hero content -->
+    <div class="hero-content-component">
+        <img class="profile-picture-circular-ffffff" alt="" src="./public/images/profile-picture-circular-ffffff.svg" id="mobile-profile-picture-circular-ffffff">
+        <h1 class="greeting-heading">Hi, I'm George Burton! 👋</h1>
+        <p class="bio">I'm a full-stack web developer progressing my career where sustainable finance and software meet! 🌍🌱</p>
+        <br>
+        <p class="bio">Check out my prior experience in sustainable finance and software:</p>
+        <br>
+        <a href="https://www.proco.store/"><img class="proco-logo" alt="a logo for the paused startup Proco, a portfolio startup solo-founded by George Burton" src="./public/images/mobile-proco-logo.svg" id="mobile-proco-logo"></a>
+    </div>
+
+    <!-- Skills section divider: -->
+    <div class="skills-list-section-break-with-text-component">
+        <h1 class="skills-list-section-break-text">Skills 👨🏻‍💻</h1>
+    </div>
+
+    <!-- Skills list content -->
+    <div class="skills-list-component">
+        <!-- Python -->
+        <div class="skill-container">
+            <p class="skills-text">Python</p>
+            <img class="python-logo" alt="a logo for the Python programming language" src="./public/images/python-logo.svg">
+        </div>
+        <!-- Django -->
+        <div class="skill-container">
+            <p class="skills-text">Django</p>
+            <img class="django-logo" alt="a logo for the python-based Django web framework" src="./public/images/django-thumbnail-logo.svg">
+        </div>
+        <!-- JavaScript -->
+        <div class="skill-container">
+            <p class="skills-text">JavaScript</p>
+            <img class="javascript-logo" alt="a logo for the JavaScript programming language" src="./public/images/js-logo.svg">
+        </div>
+        <!-- React -->
+        <div class="skill-container">
+            <p class="skills-text">React</p>
+            <img class="react-logo" alt="a logo for the JavaScript library, React" src="./public/images/react-logo.svg">
+        </div>
+        <!-- FSA Certified -->
+        <div class="skill-container">
+            <p class="skills-text">FSA Certified</p>
+            <img class="fsa-logo" alt="a logo for the Financial " src="./public/images/fsa-credential-thumbnail-logo.svg">
+        </div>
+        <!-- HTML5 -->
+        <div class="skill-container">
+            <p class="skills-text">HTML5</p>
+            <img class="" alt="a logo for the latest and fifth version of the HyperText Markup Language (HTML)" src="./public/images/html-5-logo.svg">
+        </div>
+        <!-- CSS3 -->
+        <div class="skill-container">
+            <p class="skills-text">CSS3</p>
+            <img class="" alt="a logo for the latest and third level of the Cascading Style Sheets (CSS) styling Language" src="./public/images/css-logo.svg">
+        </div>
+    </div>
+
+    <!-- Portfolio section divider: -->
+    <div class="portfolio-list-section-break-with-text-component">
+        <h1 class="portfolio-list-section-break-text">Portfolio 💼:</h1>
+    </div>
+
+    <!-- Portfolio content -->
+    <div>
+        <img class="thumbnail-icon" src="./public/images/thumbnail-placeholder.png">
+    </div>
+
+
+
+
+    <!-- JS to manually show the pixel width of the browser pain within VS Code: -->
+    <div id="width-indicator" style="position:fixed;top:0;right:0;background:#222;color:#fff;padding:4px;z-index:9999;"></div>
 
 </body>
+
+<script src="./js/main.js"></script>
 
 </html>
 

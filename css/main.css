@@ -5,6 +5,9 @@
 
 /* Base (Mobile) - optimised for iPhone 13 and 14 dimensions - W390-H844  */
 
+.mobile-bio-only {display: block;}
+.tablet-bio-only, .desktop-bio-only {display: none;}
+
 body {
   /* This means that the body is now a flex container. The child items within the body now become flex items. */
   display: flex;
@@ -12,7 +15,7 @@ body {
   justify-content: space-between;
   margin: 0;
   line-height: normal;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   text-align: center;
   color: #000;
 
@@ -38,6 +41,7 @@ body {
 }
 
 /* The auto layout group container of the burton-works text */
+
 .Auto-layout-group-navigation-content-iPhone-13-and-14 {
   display: flex;
   width: 152px;
@@ -65,7 +69,7 @@ body {
   padding: 10px 5px;
   position: absolute;
   top: 31px; 
-  right: 38.75px;
+  right: 15.75px;
   height: 39.5px;
   overflow-y: auto;
 
@@ -325,17 +329,20 @@ body {
 
 /* Media queries for tablet and desktop: */
 /* Tablet - median dimensions */
-/* @media (min-width: 768px) and (max-width: 1023px) {
-  body {
-    font-size: ;
-  }
-} */
+/* TODO: Implement desktop-specific styles in this media query */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .mobile-bio-only {display: none;}
+  .tablet-bio-only {display: block;}
+
+} 
 
 /* Desktop - */
-/* @media (min-width: 1024px) {
-  body {
-    font-size: ;
-  }
-} */
+/* TODO: Implement desktop-specific styles in this media query */
+@media (min-width: 1024px) {
 
-/* Note to self, when I've finished the code here, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */
+  .mobile-bio-only {display: none;}
+  .desktop-bio-only {display: block;}
+
+}
+/* TODO: when reviewing the code, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */

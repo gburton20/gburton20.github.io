@@ -7,6 +7,7 @@
 
 .mobile-bio-only {display: block;}
 .tablet-bio-only, .desktop-bio-only {display: none;}
+.desktop-nav-only, .desktop-nav-content {display: none;}
 
 body {
   /* This means that the body is now a flex container. The child items within the body now become flex items. */
@@ -82,6 +83,32 @@ body {
   flex-shrink: 0;
 
   /* border: 2px dashed firebrick; */
+}
+
+/* Desktop nav bar CSS */
+.desktop-nav-only {
+  width: 100%;
+  position: relative;
+  background-color: rgba(60, 224, 175, 0.75);
+  height: 80px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 24px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 24px;
+  color: #000;
+  font-family: Inter;
+}
+
+.desktop-nav-content {
+  width: 1268px;
+  position: relative;
+  height: 42px;
 }
 
 
@@ -343,6 +370,8 @@ body {
 
   .mobile-bio-only {display: none;}
   .desktop-bio-only {display: block;}
+  .desktop-nav-only, .desktop-nav-content {display: row}
+  .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
 
 }
 /* TODO: when reviewing the code, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */

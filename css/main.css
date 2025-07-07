@@ -8,6 +8,7 @@
 .mobile-bio-only, .Instance-of-navigation-component-iPhone-13-and-14 {display: block;}
 .tablet-bio-only, .desktop-bio-only {display: none;}
 .desktop-nav-only, .desktop-nav-content-only {display: none;}
+.tablet-nav-only {display: none;}
 
 body {
   /* This means that the body is now a flex container. The child items within the body now become flex items. */
@@ -38,7 +39,7 @@ body {
   align-items: center;
   height: 90px;
 
-  border: 2px dashed coral;
+  /* border: 2px dashed coral; */
 }
 
 /* The auto layout group container of the burton-works text */
@@ -77,7 +78,7 @@ body {
   /* border: 2px dashed black; */
 }
 
-.hamburger-menu {
+.mobile-hamburger-menu {
   width: 29.25px;
   height: 19.5px;
   flex-shrink: 0;
@@ -85,96 +86,6 @@ body {
   /* border: 2px dashed firebrick; */
 }
 
-/* Desktop nav bar CSS */
-.desktop-nav-only {
-  width: 100vw;
-  /* position: relative; */
-  height: 80px;
-  align-items: center;
-  flex-direction: row;
-  font-size: 24px;
-  color: #000;
-  padding: 0 3.97vw;
-
-  border: 2px dashed firebrick;
-
-}
-
-.desktop-nav-content-only {
-  justify-content: space-between;
-  align-items: center;
-  padding: 2px 0px 3px 0px;
-  gap: 26vw;
-  position: relative;
-  height: 42px;
-
-  border: 2px dashed black;
-
-}
-
-.desktop-burton-works-title-text {
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-
-  border: 2px dashed red;
-}
-
-.desktop-nav-links {
-  width: auto;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-
-  border: 2px dashed blue;
-
-}
-
-.desktop-skills-and-portfolio-links {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2.78vw;
-  font-weight: 500;
-  text-align: center;
-
-  border: 2px dashed orange;
-
-}
-
-
-
-.desktop-book-a-call-button {
-  position: relative;
-  border-radius: 8px;
-  background-color: rgba(201, 32, 82, 0.75);
-  border: 1px solid #000;
-  box-sizing: border-box;
-  width: 10.9vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: center;
-  padding: 10px 16px;
-  cursor: pointer;
-}
-
-.desktop-nav-button-text {
-  position: relative;
-  color: #FFF;
-  flex-wrap: wrap;
-  font-size: 24px;
-  font-weight: 600; 
-  margin: 0; 
-}
 
 /* CSS for the container for all hero content */
 .hero-content-component {
@@ -199,15 +110,15 @@ body {
   align-items: center;
   flex-shrink: 0;
   aspect-ratio: 1/1;
-
+  
   /* border: 2px dashed coral; */
 }
 
-.greeting-heading {
-  width: 40.6vw;
-  font-size: 2.78vw;
+.mobile-greeting-heading {
+  width: 321px;
+  font-size: 40px;
   font-weight: 900;
-
+  
   /* border: 2px dashed black; */
 }
 
@@ -224,7 +135,7 @@ body {
   width: 161.976px;
   height: 27.45px;
   flex-shrink: 0;
-
+  
   /* border: 2px dashed blue; */
 }
 
@@ -238,7 +149,7 @@ body {
   align-items: center;
   flex-shrink: 0;
   align-self: stretch;
-
+  
   /* border: 2px dashed blue; */
 }
 
@@ -247,7 +158,7 @@ body {
   font-size: 34px;
   font-weight: 700;
   line-height: 38px; /* 111.765% */
-
+  
   /* border: 2px dashed firebrick; */
 }
 
@@ -271,7 +182,7 @@ body {
   gap: 13px;
   flex-wrap: wrap;
   flex-shrink: 0;
-
+  
   /* border: 2px dashed black; */
 }
 
@@ -280,6 +191,12 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.OpenAI-logo {
+  width: 59.46px;
+  height: 59.46px;
+  aspect-ratio: 59.46/59.46px;
 }
 
 
@@ -292,7 +209,7 @@ body {
   align-items: center;
   flex-shrink: 0;
   align-self: stretch;
-
+  
   /* border: 2px dashed blue; */
 }
 
@@ -301,7 +218,7 @@ body {
   font-size: 34px;
   font-weight: 700;
   line-height: 38px; /* 111.765% */
-
+  
   /* border: 2px dashed firebrick; */
 }
 
@@ -324,7 +241,7 @@ body {
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
-
+  
   /* border: 2px dashed black; */
 }
 
@@ -341,7 +258,7 @@ body {
 }
 
 .project-bio {
-	width: 319px;
+  width: 319px;
 	position: relative;
 	font-size: 28px;
 	line-height: 38px;
@@ -369,19 +286,19 @@ body {
   padding: 10px 16px;
   font-size: 18px;
   color: #fff;
-
-   /* border: 2px dashed black; */
+  
+  /* border: 2px dashed black; */
 }
 
 .button-primary-text {
   position: relative;
   font-weight: 600;
-
+  
   /* border: 2px dashed black; */
 }
 
 /* CSS for the footer section containing the contact CTA button */
-.footer-container {
+.mobile-and-tablet-footer-container {
   border: 1px solid #000;
   background: rgba(60, 224, 175, 0.75);
   display: flex;
@@ -395,7 +312,7 @@ body {
 }
 
 /* Footer contact CTA button */
-.footer-button-container {
+.mobile-and-tablet-footer-button-container {
   border-radius: 8px;
   border: 1px solid #1E1E1E;
   background: rgba(201, 32, 82, 0.75);
@@ -407,12 +324,12 @@ body {
   align-items: center;
   gap: 15px;
   flex-shrink: 0;
-
+  
   /* border: 2px dashed blue; */
 }
 
 /* Matches spec */
-.footer-button-text {
+.mobile-and-tablet-footer-button-text {
   color: #FFF;
   font-size: 18px;
   font-weight: 600;
@@ -422,20 +339,226 @@ body {
 /* Tablet - median dimensions */
 /* TODO: Implement desktop-specific styles in this media query */
 @media (min-width: 768px) and (max-width: 1023px) {
-
+  
   .mobile-bio-only {display: none;}
+  .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
   .tablet-bio-only {display: block;}
+  .tablet-nav-only {display: flex;}
+
+  /* Tablet nav bar CSS */
+  .tablet-nav-only {
+    /* width: 768px; */
+    height: 90px;
+    /* padding: 11px 0px; */
+    justify-content: center;
+    align-items: center;
+    /* gap: 149.143px; */
+  }
+
+  .tablet-burton-works-title-text-container {
+    display: flex;
+    /* width: 238.857px; */
+    height: 66px;
+    max-width: 1571.429px;
+    padding: 0px 157.143px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .tablet-burton-works-title-text {
+    width: 238.857px;
+    flex-shrink: 0;
+    font-size: 31.429px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
+  
+  .tablet-hamburger-menu-container {
+    display: flex;
+    width: 54.25px;
+    height: 54.596px;
+    padding: 10px 5px;
+    /* justify-content: space-between; */
+    align-items: center;
+    flex-shrink: 0;
+    aspect-ratio: 54.25/54.60;
+    position: absolute;
+    top: 18px; 
+    right: 30.75px;
+    height: 39.5px;
+    overflow-y: auto;
+  }
+
+  .tablet-hamburger-menu {
+    flex: 1 0 0;
+    align-self: stretch;
+  }
 
 } 
 
 /* Desktop - */
 /* TODO: Implement desktop-specific styles in this media query */
 @media (min-width: 1024px) {
-
-  .mobile-bio-only {display: none;}
+  
+  .mobile-bio-only, .mobile-and-tablet-skills-list-component, .mobile-and-tablet-footer-container {display: none;}
   .desktop-bio-only {display: block;}
   .desktop-nav-only, .desktop-nav-content-only {display: flex;}
   .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
+  
+  /* Desktop nav bar CSS */
+  .desktop-nav-only {
+    /* width: 100vw; */
+    /* position: relative; */
+    height: 80px;
+    align-items: center;
+    flex-direction: row;
+    font-size: 24px;
+    color: #000;
+    padding: 0 3.97vw;
 
+    /* Settings to ensure that the Book a Call button doesn't exceed the width of the window */
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+  
+    /* border: 2px dashed firebrick; */
+  
+  }
+  
+  .desktop-nav-content-only {
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0px 3px 0px;
+    gap: 42vw;
+    position: relative;
+    height: 42px;
+    width: 100%;
+  
+    /* border: 2px dashed black; */
+  
+  }
+  
+  .desktop-burton-works-title-text {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    white-space: nowrap;
+  
+    /* border: 2px dashed red; */
+  }
+  
+  .desktop-nav-links {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  
+    /* border: 2px dashed blue; */
+  
+  }
+  
+  .desktop-skills-and-portfolio-links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.78vw;
+    font-weight: 500;
+    text-align: center;
+  
+    /* border: 2px dashed orange; */
+  
+  }
+  
+  .desktop-book-a-call-button {
+    position: relative;
+    border-radius: 8px;
+    background-color: rgba(201, 32, 82, 0.75);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: auto;
+    min-width: 140px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    padding: 0px 24px;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 100%
+  }
+  
+  .desktop-nav-button-text {
+    position: relative;
+    color: #FFF;
+    flex-wrap: wrap;
+    font-size: 24px;
+    font-weight: 600; 
+    margin: 0; 
+    white-space: nowrap;
+  }
+
+  /* Desktop Skills list component */
+  .desktop-skills-list-component {
+    background: rgba(32, 201, 151, 0.75);
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 1342px;
+    height: 154px; */
+    padding: 0px 22px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0 15px;
+  }
+
+
+
+  /* CSS for the desktop footer section containing the contact CTA button */
+  .desktop-footer-container {
+    border: 1px solid #000;
+    background: rgba(60, 224, 175, 0.75);
+    display: flex;
+    height: 130px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+/* Footer contact CTA button */
+  .desktop-footer-button-container {
+    border-radius: 8px;
+    border: 1px solid #1E1E1E;
+    background: rgba(201, 32, 82, 0.75);
+    display: flex;
+    height: 80px;
+    padding: 10px 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    
+    /* border: 2px dashed blue; */
+  }
+
+/* Matches spec */
+  .desktop-footer-button-text {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 /* TODO: when reviewing the code, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */

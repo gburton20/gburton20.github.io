@@ -5,9 +5,9 @@
 
 /* Base (Mobile) - optimised for iPhone 13 and 14 dimensions - W390-H844  */
 
-.mobile-bio-only {display: block;}
+.mobile-bio-only, .Instance-of-navigation-component-iPhone-13-and-14 {display: block;}
 .tablet-bio-only, .desktop-bio-only {display: none;}
-.desktop-nav-only, .desktop-nav-content {display: none;}
+.desktop-nav-only, .desktop-nav-content-only {display: none;}
 
 body {
   /* This means that the body is now a flex container. The child items within the body now become flex items. */
@@ -38,7 +38,7 @@ body {
   align-items: center;
   height: 90px;
 
-  /* border: 2px dashed coral; */
+  border: 2px dashed coral;
 }
 
 /* The auto layout group container of the burton-works text */
@@ -87,30 +87,94 @@ body {
 
 /* Desktop nav bar CSS */
 .desktop-nav-only {
-  width: 100%;
-  position: relative;
-  background-color: rgba(60, 224, 175, 0.75);
+  width: 100vw;
+  /* position: relative; */
   height: 80px;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0px 24px;
-  box-sizing: border-box;
-  text-align: center;
+  flex-direction: row;
   font-size: 24px;
   color: #000;
-  font-family: Inter;
+  padding: 0 3.97vw;
+
+  border: 2px dashed firebrick;
+
 }
 
-.desktop-nav-content {
-  width: 1268px;
+.desktop-nav-content-only {
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0px 3px 0px;
+  gap: 26vw;
   position: relative;
   height: 42px;
+
+  border: 2px dashed black;
+
 }
 
+.desktop-burton-works-title-text {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+
+  border: 2px dashed red;
+}
+
+.desktop-nav-links {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  border: 2px dashed blue;
+
+}
+
+.desktop-skills-and-portfolio-links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.78vw;
+  font-weight: 500;
+  text-align: center;
+
+  border: 2px dashed orange;
+
+}
+
+
+
+.desktop-book-a-call-button {
+  position: relative;
+  border-radius: 8px;
+  background-color: rgba(201, 32, 82, 0.75);
+  border: 1px solid #000;
+  box-sizing: border-box;
+  width: 10.9vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.desktop-nav-button-text {
+  position: relative;
+  color: #FFF;
+  flex-wrap: wrap;
+  font-size: 24px;
+  font-weight: 600; 
+  margin: 0; 
+}
 
 /* CSS for the container for all hero content */
 .hero-content-component {
@@ -140,8 +204,8 @@ body {
 }
 
 .greeting-heading {
-  width: 321px;
-  font-size: 40px;
+  width: 40.6vw;
+  font-size: 2.78vw;
   font-weight: 900;
 
   /* border: 2px dashed black; */
@@ -370,7 +434,7 @@ body {
 
   .mobile-bio-only {display: none;}
   .desktop-bio-only {display: block;}
-  .desktop-nav-only, .desktop-nav-content {display: row}
+  .desktop-nav-only, .desktop-nav-content-only {display: flex;}
   .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
 
 }

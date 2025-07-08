@@ -400,6 +400,13 @@ body {
     align-self: stretch;
   }
 
+  .embedded-proco-logo {
+    vertical-align: middle; 
+    width: 5.5em; 
+    height: 1em; 
+    margin: 0 2px;
+  }
+
 } 
 
 /* Desktop - */
@@ -408,8 +415,9 @@ body {
   
   .mobile-bio-only, .mobile-and-tablet-skills-list-component, .project-card-component, .mobile-and-tablet-footer-container {display: none;}
   .desktop-bio-only {display: block;}
-  .desktop-nav-only, .desktop-nav-content-only, .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: flex;}
+  .desktop-nav-only, .desktop-nav-content-only, .embedded-proco-logo, .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: flex;}
   .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
+
   
   /* Desktop nav bar CSS */
   .desktop-nav-only {
@@ -476,9 +484,22 @@ body {
     gap: 2.78vw;
     font-weight: 500;
     text-align: center;
+    text-decoration: none;
   
     /* border: 2px dashed orange; */
   
+  }
+
+  /* #skills-list-section-break {
+    text-decoration: none;
+  }
+
+  #portfolio-list-section-break {
+    text-decoration: none;
+  } */
+  a {
+    text-decoration: none;
+    color: #000;
   }
   
   .desktop-book-a-call-button {
@@ -513,6 +534,17 @@ body {
   }
 
   /* END of desktop nav bar CSS */
+
+  /* START desktop embedded proco-logo component */
+
+  .embedded-proco-logo {
+    vertical-align: middle; 
+    width: 5.5em; 
+    height: 1em; 
+    margin: 0 4px;
+  }
+
+  /* END desktop embedded proco-logo component */
 
 
   /* START Desktop Skills list component */

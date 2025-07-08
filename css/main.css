@@ -5,10 +5,9 @@
 
 /* Base (Mobile) - optimised for iPhone 13 and 14 dimensions - W390-H844  */
 
-.mobile-bio-only, .Instance-of-navigation-component-iPhone-13-and-14 {display: block;}
-.tablet-bio-only, .desktop-bio-only {display: none;}
-.desktop-nav-only, .desktop-nav-content-only {display: none;}
-.tablet-nav-only {display: none;}
+.Instance-of-navigation-component-iPhone-13-and-14, .mobile-bio-only {display: block;}
+.tablet-nav-only, .tablet-bio-only, .desktop-bio-only {display: none;}
+.desktop-nav-only, .desktop-nav-content-only, .desktop-skills-list-component, .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: none;}
 
 body {
   /* This means that the body is now a flex container. The child items within the body now become flex items. */
@@ -164,7 +163,7 @@ body {
 
 
 /* CSS for the container for all Skills list content */
-.skills-list-component {
+.mobile-and-tablet-skills-list-component {
   background-color: #20C997BF;
   display: flex;
   flex-direction: column;
@@ -344,6 +343,7 @@ body {
   .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
   .tablet-bio-only {display: block;}
   .tablet-nav-only {display: flex;}
+  .desktop-skills-list-component, .desktop-footer-container {display: none;}
 
   /* Tablet nav bar CSS */
   .tablet-nav-only {
@@ -402,9 +402,9 @@ body {
 /* TODO: Implement desktop-specific styles in this media query */
 @media (min-width: 1024px) {
   
-  .mobile-bio-only, .mobile-and-tablet-skills-list-component, .mobile-and-tablet-footer-container {display: none;}
+  .mobile-bio-only, .mobile-and-tablet-skills-list-component, .project-card-component, .mobile-and-tablet-footer-container {display: none;}
   .desktop-bio-only {display: block;}
-  .desktop-nav-only, .desktop-nav-content-only {display: flex;}
+  .desktop-nav-only, .desktop-nav-content-only, .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: flex;}
   .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
   
   /* Desktop nav bar CSS */
@@ -507,7 +507,9 @@ body {
     white-space: nowrap;
   }
 
-  /* Desktop Skills list component */
+  /* END of desktop nav bar CSS */
+
+  /* START Desktop Skills list component */
   .desktop-skills-list-component {
     background: rgba(32, 201, 151, 0.75);
     display: flex;
@@ -521,44 +523,198 @@ body {
     gap: 0 15px;
   }
 
+  /* END desktop Skills list component */
 
 
-  /* CSS for the desktop footer section containing the contact CTA button */
-  .desktop-footer-container {
+  /* START desktop portfolio component section, thumbnail left */
+  .desktop-portfolio-section-thumbnail-left {
+    width: 100%;
+    position: relative;
+    background-color: rgba(32, 201, 151, 0.75);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.88vh 15.27vw;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 25px;
+  }
+
+  .desktop-portfolio-section-thumbnail-left-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    max-width: 1000px;
+  }
+
+ .desktop-thumbnail-icon {
+    flex: 1;
+    position: relative;
+    width: 33.68vw;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .desktop-portfolio-description {
+    height: 100%;
+    flex: 1;
+    /* width: 100%; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    text-align: left;
+    font-size: 25px;
+  }
+
+  .desktop-portfolio-project-title-text {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    font-weight: 600;
+  }
+
+  .desktop-portfolio-project-bio-text {
+  	width: 100%;
+  	position: relative;
+  	font-size: 20px;
+  	line-height: 38px;
+  	font-weight: 500;
+  	text-align: left;
+  	display: inline-block;
+  }
+
+  .desktop-view-project-button {
+    position: relative;
+    border-radius: 8px;
+    background-color: rgba(201, 32, 82, 0.75);
     border: 1px solid #000;
+    box-sizing: border-box;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .desktop-view-project-button-text {
+    position: relative;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  /* END desktop portfolio component section, thumbnail left */
+
+  /* START desktop portfolio component section break */
+  .desktop-portfolio-section-break {
+    width: 100%;
+    position: relative;
+    background-color: rgba(60, 224, 175, 0.75);
+    /* border: 1px solid #000; */
+    box-sizing: border-box;
+    height: 82px;
+  }
+  /* END desktop portfolio component section break */
+
+  /* START desktop portfolio component section, thumbnail right */
+
+  .desktop-portfolio-section-thumbnail-right {
+    width: 100%;
+    position: relative;
+    background-color: rgba(32, 201, 151, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 24px;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 25px;
+  }
+
+  .desktop-portfolio-section-thumbnail-right-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    max-width: 1000px;
+  }
+
+  /* END desktop portfolio component section, thumbnail right */
+
+
+  /* START desktop footer section */
+  .desktop-footer-container {
     background: rgba(60, 224, 175, 0.75);
     display: flex;
-    height: 130px;
-    flex-direction: column;
-    justify-content: center;
+    height: 80px;
+    padding: 0px 24px;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
     flex-shrink: 0;
     align-self: stretch;
   }
 
-/* Footer contact CTA button */
-  .desktop-footer-button-container {
-    border-radius: 8px;
-    border: 1px solid #1E1E1E;
-    background: rgba(201, 32, 82, 0.75);
+  .desktop-footer-content {
     display: flex;
-    height: 80px;
-    padding: 10px 16px;
-    flex-direction: column;
-    justify-content: center;
+    width: 1268px;
+    height: 42px;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    flex-shrink: 0;
-    
-    /* border: 2px dashed blue; */
   }
 
-/* Matches spec */
-  .desktop-footer-button-text {
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 600;
+  .desktop-footer-burton-works-logo {
+    width: 170px;
+    height: 21px;
+    flex-shrink: 0; 
+    color: #000;
+    text-align: center;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
   }
+
+  .desktop-footer-contact-information {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .desktop-footer-email-address {
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    color: #000;
+
+  }
+
+  .desktop-footer-phone-number {
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  /* END desktop footer section */
+
 }
 /* TODO: when reviewing the code, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */

@@ -5,7 +5,9 @@
 
 /* Base (Mobile) - optimised for iPhone 13 and 14 dimensions - W390-H844  */
 
-.Instance-of-navigation-component-iPhone-13-and-14, .mobile-bio-only {display: block;}
+.universal-navigation-bar {display: block;} 
+.mobile-navigation-bar {display: block;} 
+.mobile-bio-only {display: block;}
 .tablet-nav-only, .tablet-bio-only, .desktop-bio-only {display: none;}
 .desktop-nav-only, .desktop-nav-content-only, .desktop-skills-list-component, .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: none;}
 
@@ -85,14 +87,20 @@ body {
   /* border: 2px dashed firebrick; */
 }
 
-/* CSS for the hamburger overlay menu: */
+/* CSS for the hamburger overlay menu when default: */
 .mobile-nav-hamburger-menu-overlay-container {
   display: none;
+}
+
+/* CSS for the hamburger overlay menu when is-active: */
+.mobile-nav-hamburger-menu-overlay-container.is-active {
+  display: flex;
   /* (292px / 390px) * 100 = 74.87vw */
   width: 74.87px;
   /* (207.904px / 844px) * 100 = 24.63vh */
   height: 24.63vh;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   gap: 11.68px;
   border-radius: 14.016px;
@@ -102,10 +110,9 @@ body {
   box-shadow: 0px 4.672px 4.672px 0px rgba(0, 0, 0, 0.25);
 }
 
-/* .mobile-nav-hamburger-menu-overlay {
-  
-
-} */
+.mobile-nav-hamburger-menu-overlay {
+  position: absolute;
+}
 
 /* Mobile nav Menu button: */
 /* .mobile-nav-menu-button {
@@ -408,11 +415,10 @@ body {
 /* Tablet - median dimensions */
 /* TODO: Implement desktop-specific styles in this media query */
 @media (min-width: 768px) and (max-width: 1023px) {
-  
-  .mobile-bio-only {display: none;}
-  .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
-  .tablet-bio-only {display: block;}
+
+  .mobile-navigation-bar, .mobile-hamburger-menu-container, .mobile-bio-only {display: none;}
   .tablet-nav-only {display: flex;}
+  .tablet-bio-only {display: block;}
   .desktop-skills-list-component, .desktop-footer-container {display: none;}
 
   /* Tablet nav bar CSS */
@@ -479,11 +485,16 @@ body {
 /* TODO: Implement desktop-specific styles in this media query */
 @media (min-width: 1024px) {
   
-  .mobile-bio-only, .mobile-and-tablet-skills-list-component, .project-card-component, .mobile-and-tablet-footer-container {display: none;}
-  .desktop-bio-only {display: block;}
-  .desktop-nav-only, .desktop-nav-content-only, .embedded-proco-logo, .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: flex;}
-  .Instance-of-navigation-component-iPhone-13-and-14, .Auto-layout-group-hamburger-menu-iPhone-13-and-14, .hamburger-menu {display: none;}
+  /* All mobile-only elements needing the {display: none} property: */
+  .mobile-navigation-bar, .mobile-bio-only, .mobile-and-tablet-skills-list-component, .project-card-component, .mobile-and-tablet-footer-container {display: none;}
 
+  /* All tablet-only elements needing the {display: none} property: */
+
+  
+  /* All desktop-only elements needing the {display: block or flex} property: */
+  .desktop-nav-only, .desktop-nav-content-only, .embedded-proco-logo {display: flex;}
+  .desktop-bio-only {display: block;}
+  .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: flex;}
   
   /* Desktop nav bar CSS */
   .desktop-nav-only {

@@ -7,13 +7,28 @@ showWidth();
 
 // Mobile JS functionality:
 
-// Mobile nav hamburger menu functions
-const MOBILE_HAMBURGER_ICON = document.querySelector('.mobile-hamburger-menu-container');
-const MOBILE_NAV_HAMBURGER_OVERLAY = document.querySelector('mobile-nav-hamburger-menu-overlay-container');
+// Constants for better maintainability
+const MOBILE_HAMBURGER_SELECTOR = '.mobile-hamburger-menu-container';
+const MOBILE_NAV_OVERLAY_SELECTOR = '.mobile-nav-hamburger-menu-overlay-container';
+const ACTIVE_CLASS = 'is-active';
 
-MOBILE_HAMBURGER_ICON.addEventListener('click', () => {
-    MOBILE_NAV_HAMBURGER_OVERLAY.toggle('is-active');
-});
+// Mobile nav hamburger menu functions
+function toggleMobileNavMenu() {
+    const mobileNavOverlay = document.querySelector(MOBILE_NAV_OVERLAY_SELECTOR);
+    if (mobileNavOverlay) {
+        mobileNavOverlay.classList.toggle(ACTIVE_CLASS);
+    }
+}
+
+function initializeMobileNavMenu() {
+    const mobileHamburgerIcon = document.querySelector(MOBILE_HAMBURGER_SELECTOR);
+    if (mobileHamburgerIcon) {
+        mobileHamburgerIcon.addEventListener('click', toggleMobileNavMenu);
+    }
+}
+
+// Initialize mobile nav menu when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeMobileNavMenu);
 
 
 // Mobile footer hamburger menu functions

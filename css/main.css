@@ -24,14 +24,14 @@ body {
 }
 
 /* This div was created to set global CSS rules for the nav bar across mobile, tablet and desktop */
-.Navigation-component {
+.universal-navigation-bar {
   background: rgba(60, 224, 175, 0.75);
 
   /* border: 2px dashed green; */
 }
 
 /* This class of nav element sets the CSS rules for the default mobile web version (mobile-first) */
-.Instance-of-navigation-component-iPhone-13-and-14 {
+.mobile-navigation-bar {
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Push children to the bottom */
@@ -42,8 +42,7 @@ body {
 }
 
 /* The auto layout group container of the burton-works text */
-
-.Auto-layout-group-navigation-content-iPhone-13-and-14 {
+.mobile-nav-burton-works-title-text-container {
   display: flex;
   width: 152px;
   height: 42px;
@@ -56,7 +55,7 @@ body {
 }
  
 /* The burton-works text */
-.burton-works-title-text {
+.mobile-nav-burton-works-title-text {
   font-size: 20px;
   font-style: normal;
   font-weight: 900;
@@ -65,7 +64,7 @@ body {
 }
 
 /* The auto layout group container for the hamburger menu */
-.Auto-layout-group-hamburger-menu-iPhone-13-and-14 {
+.mobile-hamburger-menu-container {
   display: flex;
   width: 39.25px;
   padding: 10px 5px;
@@ -78,13 +77,80 @@ body {
   /* border: 2px dashed black; */
 }
 
-.mobile-hamburger-menu {
+.mobile-hamburger-menu-icon {
   width: 29.25px;
   height: 19.5px;
   flex-shrink: 0;
 
   /* border: 2px dashed firebrick; */
 }
+
+/* CSS for the hamburger overlay menu: */
+.mobile-nav-hamburger-menu-overlay-container {
+  display: none;
+  /* (292px / 390px) * 100 = 74.87vw */
+  width: 74.87px;
+  /* (207.904px / 844px) * 100 = 24.63vh */
+  height: 24.63vh;
+  flex-direction: column;
+  align-items: center;
+  gap: 11.68px;
+  border-radius: 14.016px;
+  border: 1.168px solid #000;
+  background: linear-gradient(0deg, #383838 0%, #383838 100%), rgba(179, 179, 179, 0.82);
+  background-blend-mode: color-dodge, normal;
+  box-shadow: 0px 4.672px 4.672px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* .mobile-nav-hamburger-menu-overlay {
+  
+
+} */
+
+/* Mobile nav Menu button: */
+/* .mobile-nav-menu-button {
+
+} */
+
+/* .mobile-nav-x-icon {
+
+} */
+
+/* .mobile-nav-menu-button-text {
+
+} */
+
+/* .mobile-nav-chevron-down-icon {
+
+} */
+
+/* Mobile nav Skills button: */
+/* .mobile-nav-skills-button {
+
+} */
+
+/* .mobile-nav-skills-button-text {
+
+} */
+
+/* Mobile nav Portfolio button: */
+/* .mobile-nav-portfolio-button {
+
+} */
+
+/* .mobile-nav-portfolio-button-text {
+
+} */
+
+/* Mobile nav Book a Call button: */
+/* .mobile-nav-book-a-call-button {
+
+} */
+
+/* .mobile-nav-book-a-call-button-text {
+  
+} */
+/* END of nav bar section */
 
 
 /* CSS for the container for all hero content */
@@ -400,7 +466,7 @@ body {
     align-self: stretch;
   }
 
-  .embedded-proco-logo {
+  .tablet-embedded-proco-logo {
     vertical-align: middle; 
     width: 5.5em; 
     height: 1em; 
@@ -537,7 +603,7 @@ body {
 
   /* START desktop embedded proco-logo component */
 
-  .embedded-proco-logo {
+  .desktop-embedded-proco-logo {
     vertical-align: middle; 
     width: 5.5em; 
     height: 1em; 
@@ -748,20 +814,21 @@ body {
     display: flex;
     align-items: center;
     gap: 40px;
+    font-weight: 600;
   }
 
   .desktop-footer-email-address {
     font-style: normal;
-    font-weight: 400;
+    /* font-weight: 400; */
     line-height: normal;
-    text-decoration: none;
+    /* text-decoration: none; */
     color: #000;
 
   }
 
   .desktop-footer-phone-number {
     font-style: normal;
-    font-weight: 400;
+    /* font-weight: 400; */
     line-height: normal;
   }
 

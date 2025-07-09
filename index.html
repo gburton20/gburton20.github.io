@@ -10,15 +10,41 @@
 
 <body>
     <!-- Nav bar -->
-    <div class="Navigation-component">
+    <div class="universal-navigation-bar">
         <!-- Nav bar for mobile -->
-        <nav class="Instance-of-navigation-component-iPhone-13-and-14">
-            <div class="Auto-layout-group-navigation-content-iPhone-13-and-14">
-                <h1 class="burton-works-title-text">burton-works</h1>
+        <nav class="mobile-navigation-bar">
+            <div class="mobile-nav-burton-works-title-text-container">
+                <h1 class="mobile-nav-burton-works-title-text">burton-works</h1>
             </div>
-            <div class="Auto-layout-group-hamburger-menu-iPhone-13-and-14">
-                <img class="mobile-hamburger-menu" alt="a hamburger menu to open the navigation menu for the home page of the website when opened on a smartphone browser" src="./public/images/mobile-hamburger-menu-icon.svg">
+            <!-- Closed, passive state of the mobile hamburger menu -->
+            <div class="mobile-hamburger-menu-container">
+                <img class="mobile-hamburger-menu-icon" alt="a hamburger menu to open the navigation menu for the home page of the website when opened on a smartphone browser" src="./public/images/mobile-hamburger-menu-icon.svg">
             </div>
+            <!-- START HTML for the nav hamburger menu overlay container, which is to be used for styling: -->
+            <div class="mobile-nav-hamburger-menu-overlay-container">
+                <!-- START HTML for the nav hamburger menu overlay  -->
+                <div class="mobile-nav-hamburger-menu-overlay">
+                    <!-- START HTML for the MENU BUTTON in the nav hamburger menu overlay -->
+                    <div class="mobile-nav-menu-button">
+                        <img class="mobile-nav-x-icon" alt="" src="./public/images/mobile-nav-x-icon.svg">
+                        <div class="mobile-nav-menu-button-text">Menu</div>
+                        <img class="mobile-nav-chevron-down-icon" alt="" src="./public/images/mobile-nav-chevron-down.svg">
+                    </div>
+                    <!-- START HTML for the SKILLS BUTTON in the nav hamburger menu overlay -->
+                    <div class="mobile-nav-skills-button">
+                        <div class="mobile-nav-skills-button-text">Skills</div>
+                    </div>
+                    <!-- START HTML for the PORTFOLIO BUTTON in the nav hamburger menu overlay -->
+                    <div class="mobile-nav-portfolio-button">
+                        <div class="mobile-nav-portfolio-button-text">Portfolio</div>
+                    </div>
+                    <!-- START HTML for the BOOK A CALL BUTTON in the nav hamburger menu overlay -->
+                    <div class="mobile-nav-book-a-call-button">
+                        <a class="mobile-nav-book-a-call-button-text" href="https://calendly.com/george-burton-works/30min?preview_source=et_card&month=2025-06" target="_blank" rel="noopener noreferrer">Book a call</a>
+                    </div>
+                </div> <!-- END HTML for the nav hamburger menu overlay  -->
+            </div> <!-- END HTML for the nav hamburger menu overlay container-->
+
         </nav>
 
         <!-- Nav bar for tablet -->
@@ -66,7 +92,7 @@
         <div class="tablet-bio-only">
             <p class="bio">George is a full-stack web developer advancing his career at the intersection of sustainable finance and technology. 🌍 </p>
             <p class="bio">He has spent the past couple of years ideating, launching, and operating
-                <img class="embedded-proco-logo" src="./public/images/proco-logo.svg" alt="Proco logo">, a b2b SaaS product.</p>
+                <img class="tablet-embedded-proco-logo" src="./public/images/proco-logo.svg" alt="Proco logo">, a b2b SaaS product.</p>
             <p class="bio">George is now looking to contribute his development skills, industry experience and passion to the right b2b SaaS product in the sustainable finance space. 🌱</p>
         </div>
 
@@ -74,8 +100,8 @@
         <div class="desktop-bio-only">
             <p class="bio">George is a full-stack web developer advancing his career at the intersection of sustainable finance and technology. 🌍</p>
             <p class="bio">
-              He has spent the past couple of years ideating, launching, and operating
-                <img class="embedded-proco-logo" src="./public/images/proco-logo.svg" alt="Proco logo">. This productivity software solution for businesses enables sales professionals to capitalise on the increasing value of corporate sustainable finance data. 📊
+              He has spent the past couple of years ideating, launching, and operating 
+              <img class="desktop-embedded-proco-logo" src="./public/images/proco-logo.svg" alt="Proco logo">. This productivity software solution for businesses enables sales professionals to capitalise on the increasing value of corporate sustainable finance data. 📊
             </p>
             <p class="bio">George is now looking to contribute his industry experience, passion, and development skills to the right B2B SaaS product in the sustainable finance space. 📈</p>
         </div>
@@ -249,6 +275,7 @@
             </div>
         </div>
     </div>
+    <!-- End of desktop footer -->
 
     <!-- JS to manually show the pixel width of the browser pain within VS Code: -->
     <div id="width-indicator" style="position:fixed;top:0;right:0;background:#222;color:#fff;padding:4px;z-index:9999;"></div>

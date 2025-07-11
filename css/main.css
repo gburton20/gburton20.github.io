@@ -684,6 +684,29 @@ body {
     align-self: stretch;
   }
 
+  .tablet-nav-overlay-menu-container {
+    display: none;
+  }
+
+  .tablet-nav-overlay-menu-container.is-active {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 1px; */
+  }
+
+  .tablet-nav-overlay-menu {
+    display: flex;
+    width: 100vw;
+    /* (105px / 1024px) * 100 = 10.25vh */
+    height: 10.25vh;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
   .tablet-embedded-proco-logo {
     vertical-align: middle; 
     width: 5.5em; 

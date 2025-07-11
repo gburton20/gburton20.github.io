@@ -13,10 +13,14 @@ showWidth();
 const ACTIVE_CLASS = 'is-active';
 
 // X ICONs TO ESCAPE OVERLAY MENUS
-// Const for the 'x' icon which is used to escape the nav overlay menu:
+// MOBILE:
 const MOBILE_NAV_OVERLAY_X_ICON_SELECTOR = '.mobile-nav-overlay-x-icon';
-// Const for the 'x' icon which is used to escape the footer overlay menu:
 const MOBILE_FOOTER_OVERLAY_X_ICON_SELECTOR = '.mobile-footer-overlay-x-icon';
+
+// TABLET:
+// const TABLET_NAV_OVERLAY_X_ICON_SELECTOR = '.mobile-nav-overlay-x-icon';
+// const TABLET_FOOTER_OVERLAY_X_ICON_SELECTOR = '.mobile-footer-overlay-x-icon';
+
 
 // NAV BAR:
 // Consts for the MOBILE nav overlay menu:
@@ -24,6 +28,8 @@ const MOBILE_HAMBURGER_SELECTOR = '.mobile-hamburger-menu-container';
 const MOBILE_NAV_OVERLAY_SELECTOR = '.mobile-nav-hamburger-menu-overlay-container';
 
 // Consts for the TABLET nav overlay menu:
+const TABLET_HAMBURGER_SELECTOR = '.tablet-hamburger-menu-container';
+const TABLET_NAV_OVERLAY_SELECTOR = '.tablet-nav-overlay-menu-container';
 
 
 // FOOTER:
@@ -139,6 +145,12 @@ function openMobileFooterMenu() {
 // TABLET-SPECIFIC OVERLAY MENU FUNCTIONS:
 
 // TABLET-SPECIFIC NAV OVERLAY MENU FUNCTIONS:
+
+function toggleTabletNavMenu() {
+    // Call the generic function with tablet nav-specific selectors:
+    toggleOverlayMenu(TABLET_NAV_OVERLAY_SELECTOR, TABLET);
+
+}
 
 // TABLET-SPECIFIC NAV FOOTER MENU FUNCTIONS:
 

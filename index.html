@@ -11,6 +11,7 @@
 <body>
     <!-- Nav bar -->
     <div class="universal-navigation-bar">
+
         <!-- Nav bar for mobile -->
         <nav class="mobile-navigation-bar">
             <div class="mobile-nav-burton-works-title-text-container">
@@ -26,18 +27,21 @@
                 <div class="mobile-nav-hamburger-menu-overlay">
                     <!-- START HTML for the MENU BUTTON in the nav hamburger menu overlay -->
                     <div class="mobile-nav-menu-button">
-                        <img class="mobile-nav-x-icon" alt="" src="./public/images/mobile-nav-x-icon.svg">
+                        <img class="mobile-nav-overlay-x-icon" alt="" src="./public/images/overlay-x-icon.svg">
                         <div class="mobile-nav-menu-button-text">Menu</div>
                         <img class="mobile-nav-chevron-down-icon" alt="" src="./public/images/mobile-nav-chevron-down.svg">
                     </div>
                     <!-- START HTML for the SKILLS BUTTON in the nav hamburger menu overlay -->
                     <div class="mobile-nav-skills-button">
-                        <a href=""
-                        <div class="mobile-nav-skills-button-text">Skills</div>
+                        <a href="#skills-list-section-break">
+                            <div class="mobile-nav-skills-button-text">Skills</div>
+                        </a>
                     </div>
                     <!-- START HTML for the PORTFOLIO BUTTON in the nav hamburger menu overlay -->
                     <div class="mobile-nav-portfolio-button">
-                        <div class="mobile-nav-portfolio-button-text">Portfolio</div>
+                        <a href="#portfolio-list-section-break">
+                            <div class="mobile-nav-portfolio-button-text">Portfolio</div>
+                        </a>
                     </div>
                     <!-- START HTML for the BOOK A CALL BUTTON in the nav hamburger menu overlay -->
                     <div class="mobile-nav-book-a-call-button">
@@ -84,8 +88,8 @@
 
         <!-- div for the mobile-only bio copy -->
         <div class="mobile-bio-only">
-            <p class="bio">George is a full-stack web developer advancing his career at the intersection of sustainable finance and technology. 🌍 </p>
-            <p class="bio">Check out his prior experience in sustainable finance and software:</p>
+            <p class="bio">I am a full-stack web developer at the intersection of sustainable finance and technology. 🌍 </p>
+            <p class="bio">Check out my prior experience in sustainable finance and software:</p>
             <a href="https://www.proco.store/"><img class="proco-logo" alt="a logo for the paused startup Proco, a portfolio startup solo-founded by George Burton" src="./public/images/mobile-proco-logo.svg" id="mobile-proco-logo"></a>
         </div>
 
@@ -144,8 +148,13 @@
         <!-- FSA Certified -->
         <div class="skill-container">
             <p class="skills-text">FSA Certified</p>
-            <img class="fsa-logo" alt="a logo for the Financial " src="./public/images/fsa-credential-thumbnail-logo.svg">
+            <img class="fsa-logo" alt="a logo for the Fundamentals of Sustainability Accounting credential, issued by the International Financial Reporting Standards (or IFRS) Foundation" src="./public/images/fsa-credential-thumbnail-logo.svg">
         </div>
+        <!-- Figma -->
+         <div class="skill-container">
+            <p class="skills-text">Figma</p>
+            <img class="figma-logo" alt="a logo for the digital design software, Figma" src="./public/images/figma-logo.svg">
+         </div>
         <!-- HTML5 -->
         <div class="skill-container">
             <p class="skills-text">HTML5</p>
@@ -190,6 +199,11 @@
             <p class="skills-text">FSA Certified</p>
             <img class="fsa-logo" alt="a logo for the Financial " src="./public/images/fsa-credential-thumbnail-logo.svg">
         </div>
+        <!-- Figma -->
+         <div class="skill-container">
+            <p class="skills-text">Figma</p>
+            <img class="figma-logo" alt="a logo for the digital design software, Figma" src="./public/images/figma-logo.svg">
+         </div>
         <!-- HTML5 -->
         <div class="skill-container">
             <p class="skills-text">HTML5</p>
@@ -257,11 +271,54 @@
 
 
 
-    <!-- Mobile and tablet footer -->
+    <!-- MOBILE AND TABLET footer container -->
     <div class="mobile-and-tablet-footer-container">
+        <!-- Closed, passive state of the MOBILE AND TABLET footer menu -->
         <div class="mobile-and-tablet-footer-button-container">
             <p class="mobile-and-tablet-footer-button-text">Let's work together</p>
         </div>
+            <!-- START HTML for the MOBILE ONLY footer overlay menu container: -->
+            <div class="mobile-footer-overlay-menu-container">
+                <!-- START HTML for the MOBILE footer overlay menu -->
+                <div class="mobile-footer-overlay-menu">
+                    <!-- START HTML for the CONTACT BUTTON in the MOBILE footer overlay menu -->
+                    <div class="mobile-footer-contact-button">
+                        <img class="mobile-footer-overlay-x-icon" alt="" src="./public/images/overlay-x-icon.svg">
+                        <div class="mobile-footer-contact-button-text">Contact</div>
+                        <img class="mobile-nav-chevron-down-icon" alt="" src="./public/images/mobile-nav-chevron-down.svg">
+                    </div>
+                    <!-- START HTML for the LINKEDIN BUTTON in the MOBILE footer menu overlay -->
+                    <div class="mobile-footer-linkedin-button">
+                        <a href="https://www.linkedin.com/in/george-burton/" target="_blank" rel="noopener noreferrer">
+                            <div class="mobile-footer-linkedin-button-text">Connect with me on LinkedIn</div>
+                        </a>
+                    </div>
+                    <!-- START HTML for the GITHUB BUTTON in the MOBILE footer menu overlay -->
+                    <div class="mobile-footer-github-button">
+                        <a href="https://github.com/gburton20" target="_blank" rel="noopener noreferrer">
+                            <div class="mobile-footer-github-button-text">Follow me on GitHub</div>
+                        </a>
+                    </div>
+                    <!-- START HTML for the EMAIL BUTTON in the MOBILE footer menu overlay -->
+                    <div class="mobile-footer-email-button">
+                        <a href="mailto:hello@burton-works.com" target="_blank" rel="noopener noreferrer">
+                            <div class="mobile-footer-email-button-text">hello@burton-works.com</div>
+                        </a>
+                    </div>
+                    <!-- START HTML for the PHONE NUMBER BUTTON in the MOBILE footer menu overlay -->
+                    <div class="mobile-footer-phone-number-button">
+                        <a href="tel:+16464988590">
+                            <div class="mobile-footer-phone-number-button-text">+1 (646) 498-8590</div>
+                        </a>
+                    </div>
+                    <!-- START HTML for the BOOK A CALL BUTTON in the MOBILE footer menu overlay -->
+                    <div class="mobile-footer-book-a-call-button">
+                        <a href="https://calendly.com/george-burton-works/30min?preview_source=et_card&month=2025-06" target="_blank" rel="noopener noreferrer">
+                            <div class="mobile-footer-book-a-call-button-text">Book a call</div>
+                        </a>
+                    </div>
+                </div> <!-- END HTML for the nav hamburger menu overlay  -->
+            </div> <!-- END HTML for the nav hamburger menu overlay container-->
     </div>
 
     <!-- Desktop footer -->
@@ -270,6 +327,7 @@
             <div class="desktop-footer-burton-works-logo">
                 burton-works
             </div>
+            <!-- Turn this into a JPEG: -->
             <div class="desktop-footer-contact-information">
                 <a class="desktop-footer-email-address" href="mailto:hello@burton-works.com" target="_blank">hello@burton-works.com</a>
             <div class="desktop-footer-phone-number">+1 (646) 498-8590</div>

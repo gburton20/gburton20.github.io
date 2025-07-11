@@ -87,12 +87,13 @@ body {
   /* border: 2px dashed firebrick; */
 }
 
-/* CSS for the hamburger overlay menu when default: */
+/* The functions within JS set which classnames are assigned to the corresponding element in the DOM */
+/* Class name for the hamburger overlay menu element when in its default, hidden (or inactive) 'state': */
 .mobile-nav-hamburger-menu-overlay-container {
   display: none;
 }
 
-/* CSS for the hamburger overlay menu when is-active is toggled by the user: */
+/* Class name for the hamburger overlay menu element when it is in its 'is-active' 'state' */
 .mobile-nav-hamburger-menu-overlay-container.is-active {
   display: flex;
   /* (292px / 390px) * 100 = 74.87vw */
@@ -111,6 +112,9 @@ body {
   position:fixed;
   /* Coordinates for where the overlay: */
   top: 90px;
+
+  /* Z index (forward and backward) to ensure that the overlay is in front of all other content on screen when in the active state: */
+  z-index: 1;
 
 }
 
@@ -135,7 +139,7 @@ body {
   border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
 }
 
-.mobile-nav-x-icon {
+.mobile-nav-overlay-x-icon {
   padding: 0 8.18px;
 }
 
@@ -149,16 +153,22 @@ body {
 
 /* Mobile nav Skills button: */
 .mobile-nav-skills-button {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 25%;
-    align-items: center;
-    border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
+  align-items: center;
+  border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
 }
 
 .mobile-nav-skills-button-text {
   font-size: 20px;
+}
+
+/* Remove underline from links inside the Skills button */
+.mobile-nav-skills-button a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Mobile nav Portfolio button: */
@@ -175,6 +185,11 @@ body {
   font-size: 20px;
 }
 
+.mobile-nav-portfolio-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Mobile nav Book a Call button: */
 .mobile-nav-book-a-call-button {
   display: flex;
@@ -188,8 +203,8 @@ body {
 
 .mobile-nav-book-a-call-button-text {
   font-size: 20px;
-  text-decoration: none;
   color: #FFF;
+  text-decoration: none;
 }
 /* END of nav bar section */
 
@@ -351,6 +366,7 @@ body {
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
+  z-index: 0; /* Lower z-index to send it backwards */
   
   /* border: 2px dashed black; */
 }
@@ -406,8 +422,10 @@ body {
   
   /* border: 2px dashed black; */
 }
+/* End of the portfolio content */
 
-/* CSS for the footer section containing the contact CTA button */
+
+/* CSS for the footer section */
 .mobile-and-tablet-footer-container {
   border: 1px solid #000;
   background: rgba(60, 224, 175, 0.75);
@@ -444,6 +462,166 @@ body {
   font-size: 18px;
   font-weight: 600;
 }
+
+/* Rules for the dormant state of the footer overlay menu */
+.mobile-footer-overlay-menu-container {
+  display: none;
+}
+
+/* Rules for the active state of the footer overlay menu element when activated to 'is-active' by JS: */
+.mobile-footer-overlay-menu-container.is-active {
+  display: flex;
+  /* (292px / 390px) * 100 = 74.87vw */
+  width: 74.87vw;
+  /* (314.19px / 844px) * 100 = 37.22vh */
+  height: 37.22vh;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.168px;
+  border-radius: 14.016px;
+  border: 1.168px solid #000;
+  background: #FFF;
+  box-shadow: 0px 4.672px 4.672px 0px rgba(0, 0, 0, 0.25);
+
+  /* Positioning rule for the overlay: */
+  position:fixed;
+  /* Coordinates for where the overlay is fixed in position (130px from the bottom of the viewport): */
+  bottom: 130px;
+
+  /* Z index (forward and backward) to ensure that the overlay is in front of all other content on screen when in the active state: */
+  z-index: 1;
+}
+
+/* Rules for the footer overlay menu itself */
+.mobile-footer-overlay-menu {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 14.016px;
+}
+
+/* Mobile footer Contact button: */
+.mobile-footer-contact-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* padding: 0px 18.688px 0px 8.176px; */
+  height: 25%;
+  align-items: center;
+  border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
+}
+
+.mobile-footer-overlay-x-icon {
+  padding: 0 8.18px;
+}
+
+.mobile-footer-contact-button-text {
+  font-size: 20px;
+}
+
+/* Mobile footer LinkedIn button: */
+.mobile-footer-linkedin-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
+  align-items: center;
+  border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
+}
+
+.mobile-footer-linkedin-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-footer-linkedin-button-text {
+  font-size: 20px;
+}
+
+/* Mobile footer GitHub button: */
+.mobile-footer-github-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
+  align-items: center;
+  border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
+}
+.mobile-footer-github-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-footer-github-button-text {
+  font-size: 20px;
+}
+
+/* Mobile footer email button: */
+.mobile-footer-email-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
+  align-items: center;
+  border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
+}
+
+.mobile-footer-email-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-footer-email-button-text {
+  font-size: 20px;
+}
+
+/* Mobile footer phone number button: */
+.mobile-footer-phone-number-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
+  align-items: center;
+  border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
+}
+
+.mobile-footer-phone-number-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-footer-phone-number-button-text {
+  font-size: 20px;
+}
+
+/* Mobile footer book a call button: */
+.mobile-footer-book-a-call-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: rgba(201, 32, 82, 0.75);
+  height: 25%;
+  align-items: center;
+  border-bottom: 0.584px solid rgba(128, 128, 128, 0.55);
+}
+
+.mobile-footer-book-a-call-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-footer-book-a-call-button-text {
+  font-size: 20px;
+  color: #FFF;
+}
+
+
+
+
+
 
 /* Media queries for tablet and desktop: */
 /* Tablet - median dimensions */

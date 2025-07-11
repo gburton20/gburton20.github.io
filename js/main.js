@@ -7,71 +7,113 @@ showWidth();
 
 // Mobile JS functionality:
 
-// Constants in screaming snake case because they won't be changed throughout the website's lifecycle:
-const MOBILE_HAMBURGER_SELECTOR = '.mobile-hamburger-menu-container';
-const MOBILE_NAV_OVERLAY_SELECTOR = '.mobile-nav-hamburger-menu-overlay-container';
-const MOBILE_NAV_OVERLAY_X_ICON_SELECTOR = '.mobile-nav-x-icon';
+// OVERLAY MENU constants (in screaming snake case because they won't be changed throughout the website's lifecycle):
+
+// Const assigned to the string 'is-active', which is used as a reusable variable for the CSS class name. There are CSS class names for those overlay containers which need to have their 'state' toggled between '.is-active' and inactive. The subsequent functions append this string to the classnames in the DOM if ACTIVE_CLASS is called.
 const ACTIVE_CLASS = 'is-active';
 
-// Mobile nav hamburger menu functions:
-// 1) The toggleMobileNavMenu function which toggles the 'is-active' state of the mobile-nav-hamburger-menu-overlay-container, which consequently alters the .css rules for this element:
-function toggleMobileNavMenu() {
-    const mobileNavOverlay = document.querySelector(MOBILE_NAV_OVERLAY_SELECTOR);
-    // Best practice safety null check for the existence of the element with the mobile-nav-hamburger-menu-overlay-container class in the DOM. This check is best practice for JS scripts to future proof execution even if the DOM structure changes:
-    if (mobileNavOverlay) {
-        // If the element with the mobile-nav-hamburger-menu-overlay-container class in the DOM, toggle the classlist to the one where '.is-active' is appended
-        mobileNavOverlay.classList.toggle(ACTIVE_CLASS);
+// X ICONs TO ESCAPE OVERLAY MENUS
+// Const for the 'x' icon which is used to escape the nav overlay menu:
+const MOBILE_NAV_OVERLAY_X_ICON_SELECTOR = '.mobile-nav-overlay-x-icon';
+// Const for the 'x' icon which is used to escape the footer overlay menu:
+const MOBILE_FOOTER_OVERLAY_X_ICON_SELECTOR = '.mobile-footer-overlay-x-icon';
 
-        // After toggling the 'is-active' class, this condition checks if the overlay already has 'is-active' applied to it
-        if (mobileNavOverlay.classList.contains(ACTIVE_CLASS)) {
-            // 1) Close the overlay when clicking the X icon
-            const xIcon = document.querySelector(MOBILE_NAV_OVERLAY_X_ICON_SELECTOR);
-            if (xIcon) {
-                xIcon.addEventListener('click', closeMobileNavOverlay);
-            }
-            // 2) Close when clicking outside the overlay. The mousedown event is preferred here over click as more immediate
-            document.addEventListener('mousedown', handleOutsideClick);
+// NAV BAR:
+// Consts for the MOBILE nav overlay menu:
+const MOBILE_HAMBURGER_SELECTOR = '.mobile-hamburger-menu-container';
+const MOBILE_NAV_OVERLAY_SELECTOR = '.mobile-nav-hamburger-menu-overlay-container';
+
+// Consts for the TABLET nav overlay menu:
+
+
+// FOOTER:
+// Const for the MOBILE AND TABLET footer button, 'Let's work together'
+const MOBILE_AND_TABLET_FOOTER_BUTTON_SELECTOR = '.mobile-and-tablet-footer-button-container'
+
+// Const for the mobile footer overlay menu, which displays when 'toggled' to 'is-active'
+const MOBILE_FOOTER_OVERLAY_SELECTOR = '.mobile-footer-overlay-menu-container'
+
+// Const for the tablet footer overlay menu, which displays when 'toggled' to 'is-active'
+const TABLET_FOOTER_OVERLAY_SELECTOR = '.tablet-footer-overlay-menu-container'
+
+
+// GENERIC OVERLAY MENU UTILITY FUNCTIONS APPLICABLE ACROSS MOBILE AND TABLET:
+
+// A reusable and universal function for toggling the 'is-active' string to the classnames of relevant overlay menus across the website.
+// 'overlaySelector' is a placeholder param for targeting the specific overlay element (mobile or tablet overlay menu)
+// 'xIconSelector' is a placeholder param for identifying the close 'X' button in the overlay menu
+function toggleOverlayMenu(overlaySelector, xIconSelector) {
+    const overlay = document.querySelector(overlaySelector);
+    // Defensive programming safety check 'if' statement to ensure the element exists in the DOM before proceeding:
+    if (overlay) {
+        // If the element exists, toggle the '.is-active' class in the DOM
+        overlay.classList.toggle(ACTIVE_CLASS);
+        // When the overlay becomes active, and open, call addOverlayEventListeners() to set up event handlers (the 'x' or tapping off menu) to close the overlay
+        if (overlay.classList.contains(ACTIVE_CLASS)) {
+            addOverlayEventListeners(overlaySelector, xIconSelector);
+        // When the overlay is inactive, and closed, call removeOverlayEventListeners() to remove redunandt event handlers (the 'x' or tapping off menu) to keep the code efficient and lightweight
         } else {
-            removeCloseListeners();
+            removeOverlayEventListeners(overlaySelector, xIconSelector);
         }
     }
 }
 
-// The function to toggle the 'is-active' state back to inactive to close the overlay:
-function closeMobileNavOverlay() {
-    const mobileNavOverlay = document.querySelector(MOBILE_NAV_OVERLAY_SELECTOR);
-    // If mobileNavOverlay exists in the DOM and it has an 'is-active' state applied to it, remove 'is-active' and execute the removeCloseListeners() function
-    if (mobileNavOverlay && mobileNavOverlay.classList.contains(ACTIVE_CLASS)) {
-        mobileNavOverlay.classList.remove(ACTIVE_CLASS);
-        removeCloseListeners();
-    }
-}
-
-// The function to process the user's clicking outside the overlay:
-function handleOutsideClick(event) {
-    const mobileNavOverlay = document.querySelector(MOBILE_NAV_OVERLAY_SELECTOR);
-    // If mobileNavOverlay exists in the DOM AND it has an 'is-active' state applied to it AND if the event, the click, target happenned outside the menu overlay boundaries, execute the closeMobileNavOverlay() function
-    if (
-        mobileNavOverlay &&
-        mobileNavOverlay.classList.contains(ACTIVE_CLASS) &&
-        !mobileNavOverlay.contains(event.target)
-    ) {
-        closeMobileNavOverlay();
-    }
-}
-
-// A clean up function to remove redundant event listeners when the overlay is inactive. Good practice to prevent accumulation of event listeners in web apps. It's referenced in the else block of toggleMobileNavMenu and in the closeMobileNavOverlay function.
-function removeCloseListeners() {
-    const xIcon = document.querySelector(MOBILE_NAV_OVERLAY_X_ICON_SELECTOR);
+// Function to add the 'click' event listener to the universal X icon, and the 'mousedown' event listener to the entirety of the document outside of an active overlay for the handleOutsideClick function. This function is executed each time the overlay opens, overwriting the _closeHandler property each time. This overwriting happens for both overlays opening (see line 99 in removeOverlayEventListeners()).
+function addOverlayEventListeners(overlaySelector, xIconSelector) {
+    const xIcon = document.querySelector(xIconSelector);
+    // If xIcon exists:
     if (xIcon) {
-        // Execute the removeEventListener method on the same params when adding the listener in the first place (line 30 within toggleMobileNavMenu())
-        xIcon.removeEventListener('click', closeMobileNavOverlay);
+        // _closeHandler is declared as a custom property on the specific xIcon DOM element instance. It's conventional to start to name a custom properties with an underscore prefix. This custom property exists as long as the xIcon DOM element exists. This custom property has 'element(xIcon)-wide scope'.
+        xIcon._closeHandler = () => closeOverlayMenu(overlaySelector, xIconSelector);
+        // The newly created _closeHandler property, which has the value of the closeOverlayMenu() function assigned to it, is attached to the xIcon element's 'click' event. Thanks to this line, when the user clicks the xIcon element, the closeOverlayMenu() function is executed. 
+        xIcon.addEventListener('click', xIcon._closeHandler);
     }
-    // Removes the document-level mousedown event listener that handles outside clicks when the overlay is active. No null check needed as the document object always exists in the typescript Node module (see lib.dom.d.ts)
-    document.removeEventListener('mousedown', handleOutsideClick);
+    // Store the handler reference
+    document._outsideClickHandler = (event) => handleOutsideClick(event, overlaySelector, xIconSelector);
+    document.addEventListener('mousedown', document._outsideClickHandler);
 }
 
-// 2) The openMobileNavMenu function is the open, or trigger, function for the toggleMobileNavMenu function. When the event listener is activated, when a user taps the hamburger icon, it runs the toggleMobileNavMenu function. 
+// A clean up function to remove redundant overlay event listeners when the overlay is inactive. This function is conventionally good practice to prevent the accumulation of redunant event listeners in web apps. It's referenced in the else block of toggleMobileNavMenu and in the closeMobileNavOverlay function.
+function removeOverlayEventListeners(_overlaySelector, xIconSelector) {
+    const xIcon = document.querySelector(xIconSelector);
+    // If the universal X icon exists in the overly menu
+    if (xIcon) {
+        xIcon.removeEventListener('click', xIcon._closeHandler);
+    }
+    document.removeEventListener('mousedown', document._outsideClickHandler);
+}
+
+// Function to close the overlay menu via clicking the 'X' button in the overlay menu:
+function closeOverlayMenu(overlaySelector, xIconSelector) {
+    const overlay = document.querySelector(overlaySelector);
+    // If the relevant overlay selector exists AND the overlay selector classname contains the string '.is-active':
+    if (overlay && overlay.classList.contains(ACTIVE_CLASS)) {
+        // Remove the '.is-active' string from the selector's classname in the DOM
+        overlay.classList.remove(ACTIVE_CLASS);
+        // Execute the removeOverlayEventListeners function with the relevant selector and the universal X icon passed in as params:
+        removeOverlayEventListeners(overlaySelector, xIconSelector);
+    }
+}
+
+// The function to process the user's clicking outside the overlay to close it:
+function handleOutsideClick(event, overlaySelector, xIconSelector) {
+    const overlay = document.querySelector(overlaySelector);
+    // If the relevant overlay exists in the DOM AND it has an 'is-active' state applied to it AND if the event, the click, target DID NOT happen INSIDE the menu overlay boundaries, execute the closeOverlayMenu() function
+    if (overlay && overlay.classList.contains(ACTIVE_CLASS) && !overlay.contains(event.target)) {
+        closeOverlayMenu(overlaySelector, xIconSelector);
+    }
+}
+
+
+// MOBILE-SPECIFIC OVERLAY MENU FUNCTIONS:
+
+// MOBILE-SPECIFIC NAV OVERLAY MENU FUNCTIONS:
+ 
+function toggleMobileNavMenu() {
+    // Call the generic function with mobile nav-specific selectors
+    toggleOverlayMenu(MOBILE_NAV_OVERLAY_SELECTOR, MOBILE_NAV_OVERLAY_X_ICON_SELECTOR);
+}
+
 function openMobileNavMenu() {
     const mobileHamburgerIcon = document.querySelector(MOBILE_HAMBURGER_SELECTOR);
     if (mobileHamburgerIcon) {
@@ -79,21 +121,33 @@ function openMobileNavMenu() {
     }
 }
 
-// Initialize mobile nav menu when DOM is loaded - why shouldn't this be at the top?
-document.addEventListener('DOMContentLoaded', openMobileNavMenu);
+// MOBILE-SPECIFIC FOOTER OVERLAY MENU FUNCTIONS:
+
+function toggleMobileFooterMenu() {
+    // Call the same generic function with footer-specific selectors
+    toggleOverlayMenu(MOBILE_FOOTER_OVERLAY_SELECTOR, MOBILE_FOOTER_OVERLAY_X_ICON_SELECTOR);
+}
+
+function openMobileFooterMenu() {
+    const mobileFooterButton = document.querySelector(MOBILE_AND_TABLET_FOOTER_BUTTON_SELECTOR);
+    if (mobileFooterButton) {
+        mobileFooterButton.addEventListener('click', toggleMobileFooterMenu);
+    }
+}
 
 
-// Mobile footer hamburger menu functions
+// TABLET-SPECIFIC OVERLAY MENU FUNCTIONS:
 
+// TABLET-SPECIFIC NAV OVERLAY MENU FUNCTIONS:
 
-
-// Tablet JS functionality:
-
-// Tablet nav hamburger menu functions:
-
-
-// Tablet footer hamburger menu functions:
+// TABLET-SPECIFIC NAV FOOTER MENU FUNCTIONS:
 
 
 
 /* Note to self, when I've finished the code here, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */
+
+// Initialize mobile nav and footer menu when DOM is loaded after all functions have been declared, above.
+document.addEventListener('DOMContentLoaded', () => {
+    openMobileNavMenu();
+    openMobileFooterMenu();
+});

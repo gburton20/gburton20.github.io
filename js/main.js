@@ -18,27 +18,32 @@ const MOBILE_NAV_OVERLAY_X_ICON_SELECTOR = '.mobile-nav-overlay-x-icon';
 const MOBILE_FOOTER_OVERLAY_X_ICON_SELECTOR = '.mobile-footer-overlay-x-icon';
 
 // TABLET:
-// const TABLET_NAV_OVERLAY_X_ICON_SELECTOR = '.mobile-nav-overlay-x-icon';
-// const TABLET_FOOTER_OVERLAY_X_ICON_SELECTOR = '.mobile-footer-overlay-x-icon';
+const TABLET_NAV_OVERLAY_X_ICON_SELECTOR = '.tablet-nav-overlay-x-icon';
+const TABLET_FOOTER_OVERLAY_X_ICON_SELECTOR = '.mobile-footer-overlay-x-icon';
 
 
 // NAV BAR:
+// MOBILE:
 // Consts for the MOBILE nav overlay menu:
 const MOBILE_HAMBURGER_SELECTOR = '.mobile-hamburger-menu-container';
 const MOBILE_NAV_OVERLAY_SELECTOR = '.mobile-nav-hamburger-menu-overlay-container';
 
+// TABLET:
 // Consts for the TABLET nav overlay menu:
 const TABLET_HAMBURGER_SELECTOR = '.tablet-hamburger-menu-container';
 const TABLET_NAV_OVERLAY_SELECTOR = '.tablet-nav-overlay-menu-container';
 
 
-// FOOTER:
-// Const for the MOBILE AND TABLET footer button, 'Let's work together'
-const MOBILE_AND_TABLET_FOOTER_BUTTON_SELECTOR = '.mobile-and-tablet-footer-button-container'
-
+// FOOTERS:
+// MOBILE:
+// Const for the MOBILE footer button, 'Let's work together'
+const MOBILE_FOOTER_BUTTON_SELECTOR = '.mobile-and-tablet-footer-button-container'
 // Const for the mobile footer overlay menu, which displays when 'toggled' to 'is-active'
 const MOBILE_FOOTER_OVERLAY_SELECTOR = '.mobile-footer-overlay-menu-container'
 
+// TABLET:
+// Const for the TABLET footer button
+const TABLET_FOOTER_BUTTON_SELECTOR = '.tablet-footer-button-container'
 // Const for the tablet footer overlay menu, which displays when 'toggled' to 'is-active'
 const TABLET_FOOTER_OVERLAY_SELECTOR = '.tablet-footer-overlay-menu-container'
 
@@ -135,7 +140,7 @@ function toggleMobileFooterMenu() {
 }
 
 function openMobileFooterMenu() {
-    const mobileFooterButton = document.querySelector(MOBILE_AND_TABLET_FOOTER_BUTTON_SELECTOR);
+    const mobileFooterButton = document.querySelector(MOBILE_FOOTER_BUTTON_SELECTOR);
     if (mobileFooterButton) {
         mobileFooterButton.addEventListener('click', toggleMobileFooterMenu);
     }

@@ -426,7 +426,7 @@ body {
 
 
 /* CSS for the footer section */
-.mobile-and-tablet-footer-container {
+.mobile-footer-container {
   border: 1px solid #000;
   background: rgba(60, 224, 175, 0.75);
   display: flex;
@@ -440,7 +440,7 @@ body {
 }
 
 /* Footer contact CTA button */
-.mobile-and-tablet-footer-button-container {
+.mobile-footer-button-container {
   border-radius: 8px;
   border: 1px solid #1E1E1E;
   background: rgba(201, 32, 82, 0.75);
@@ -457,7 +457,7 @@ body {
 }
 
 /* Matches spec */
-.mobile-and-tablet-footer-button-text {
+.mobile-footer-button-text {
   color: #FFF;
   font-size: 18px;
   font-weight: 600;
@@ -714,6 +714,9 @@ body {
     margin: 0 2px;
   }
 
+  .tablet-footer-container {
+
+  }
 } 
 
 /* Desktop - */
@@ -721,7 +724,7 @@ body {
 @media (min-width: 1024px) {
   
   /* All mobile-only elements needing the {display: none} property: */
-  .mobile-navigation-bar, .mobile-bio-only, .mobile-and-tablet-skills-list-component, .project-card-component, .mobile-and-tablet-footer-container {display: none;}
+  .mobile-navigation-bar, .mobile-bio-only, .mobile-and-tablet-skills-list-component, .project-card-component, .mobile-footer-container {display: none;}
 
   /* All tablet-only elements needing the {display: none} property: */
 

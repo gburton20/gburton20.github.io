@@ -8,8 +8,8 @@
 .universal-navigation-bar {display: block;} 
 .mobile-navigation-bar {display: block;} 
 .mobile-bio-only {display: block;}
-.tablet-nav-only, .tablet-bio-only, .desktop-bio-only {display: none;}
-.desktop-nav-only, .desktop-nav-content-only, .desktop-skills-list-component, .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: none;}
+.tablet-nav-only, .tablet-bio-only, .tablet-footer-container {display: none;}
+.desktop-nav-only, .desktop-nav-content-only, .desktop-bio-only, .desktop-skills-list-component, .desktop-portfolio-section-thumbnail-left, .desktop-portfolio-section-thumbnail-right, .desktop-footer-container {display: none;}
 
 body {
   /* This means that the body is now a flex container. The child items within the body now become flex items. */
@@ -633,7 +633,7 @@ body {
   .tablet-bio-only {display: block;}
   .desktop-skills-list-component, .desktop-footer-container {display: none;}
 
-  /* Tablet nav bar CSS */
+  /* Tablet NAV BAR CSS */
   .tablet-nav-only {
     /* width: 768px; */
     height: 90px;
@@ -707,6 +707,8 @@ body {
     flex-shrink: 0;
   }
 
+  /* Tablet HERO CSS */
+
   .tablet-embedded-proco-logo {
     vertical-align: middle; 
     width: 5.5em; 
@@ -714,7 +716,51 @@ body {
     margin: 0 2px;
   }
 
-  .tablet-footer-container {
+    /* Tablet FOOTER CSS */
+
+  .tablet-footer-container { 
+    display: flex;
+    padding: 25px 209px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    border: 1px solid #000;
+    background: rgba(60, 224, 175, 0.75);
+  }
+
+  .tablet-footer-button-container {
+    display: flex;
+    width: 350px;
+    /* height: 120px; */
+    padding: 16.204px 25.926px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12.963px;
+    border: 1px solid #000;
+    background: rgba(201, 32, 82, 0.75);
+  }
+
+  .tablet-footer-button-text {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 29.167px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .tablet-footer-overlay-menu-container {
+    display: none;
+  }
+
+  .tablet-footer-overlay-menu-container.is-active {
+    display: flex;
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
 
   }
 } 

@@ -19,7 +19,7 @@ const MOBILE_FOOTER_OVERLAY_X_ICON_SELECTOR = '.mobile-footer-overlay-x-icon';
 
 // TABLET:
 const TABLET_NAV_OVERLAY_X_ICON_SELECTOR = '.tablet-nav-overlay-x-icon';
-const TABLET_FOOTER_OVERLAY_X_ICON_SELECTOR = '.mobile-footer-overlay-x-icon';
+const TABLET_FOOTER_OVERLAY_X_ICON_SELECTOR = '.tablet-footer-overlay-x-icon';
 
 
 // NAV BAR:
@@ -37,7 +37,7 @@ const TABLET_NAV_OVERLAY_SELECTOR = '.tablet-nav-overlay-menu-container';
 // FOOTERS:
 // MOBILE:
 // Const for the MOBILE footer button, 'Let's work together'
-const MOBILE_FOOTER_BUTTON_SELECTOR = '.mobile-and-tablet-footer-button-container'
+const MOBILE_FOOTER_BUTTON_SELECTOR = '.mobile-footer-button-container'
 // Const for the mobile footer overlay menu, which displays when 'toggled' to 'is-active'
 const MOBILE_FOOTER_OVERLAY_SELECTOR = '.mobile-footer-overlay-menu-container'
 
@@ -150,16 +150,30 @@ function openMobileFooterMenu() {
 // TABLET-SPECIFIC OVERLAY MENU FUNCTIONS:
 
 // TABLET-SPECIFIC NAV OVERLAY MENU FUNCTIONS:
-
 function toggleTabletNavMenu() {
     // Call the generic function with tablet nav-specific selectors:
-    toggleOverlayMenu(TABLET_NAV_OVERLAY_SELECTOR, TABLET);
+    toggleOverlayMenu(TABLET_NAV_OVERLAY_SELECTOR, TABLET_NAV_OVERLAY_X_ICON_SELECTOR);
+}
 
+function openTabletNavMenu() {
+    const tabletHamburgerIcon = document.querySelector(TABLET_HAMBURGER_SELECTOR);
+    if (tabletHamburgerIcon) {
+        tabletHamburgerIcon.addEventListener('click', toggleTabletNavMenu);
+    }
 }
 
 // TABLET-SPECIFIC NAV FOOTER MENU FUNCTIONS:
+function toggleTabletFooterMenu() {
+    // Call the same generic function with footer-specific selectors
+    toggleOverlayMenu(TABLET_FOOTER_OVERLAY_SELECTOR, TABLET_FOOTER_OVERLAY_X_ICON_SELECTOR);
+}
 
-
+function openTabletFooterMenu() {
+    const tabletFooterButton = document.querySelector(TABLET_FOOTER_BUTTON_SELECTOR);
+    if (tabletFooterButton) {
+        tabletFooterButton.addEventListener('click', toggleMobileFooterMenu);
+    }
+}
 
 /* Note to self, when I've finished the code here, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */
 

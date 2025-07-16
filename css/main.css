@@ -628,7 +628,7 @@ body {
 /* TODO: Implement desktop-specific styles in this media query */
 @media (min-width: 768px) and (max-width: 1023px) {
 
-  .mobile-navigation-bar, .mobile-hamburger-menu-container, .mobile-bio-only {display: none;}
+  .mobile-navigation-bar, .mobile-hamburger-menu-container, .mobile-bio-only, .mobile-footer-container {display: none;}
   .tablet-nav-only {display: flex;}
   .tablet-bio-only {display: block;}
   .desktop-skills-list-component, .desktop-footer-container {display: none;}

@@ -171,7 +171,7 @@ function toggleTabletFooterMenu() {
 function openTabletFooterMenu() {
     const tabletFooterButton = document.querySelector(TABLET_FOOTER_BUTTON_SELECTOR);
     if (tabletFooterButton) {
-        tabletFooterButton.addEventListener('click', toggleMobileFooterMenu);
+        tabletFooterButton.addEventListener('click', toggleTabletFooterMenu);
     }
 }
 
@@ -181,4 +181,6 @@ function openTabletFooterMenu() {
 document.addEventListener('DOMContentLoaded', () => {
     openMobileNavMenu();
     openMobileFooterMenu();
+    openTabletNavMenu();
+    openTabletFooterMenu();
 });

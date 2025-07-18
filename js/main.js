@@ -1,3 +1,9 @@
+import { gsap } from gsap/dist/gsap;
+
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 // Function across mobile, tablet and desktop to show pixel width when previewing in VS Code and in the browser
 function showWidth() {
   document.getElementById('width-indicator').textContent = window.innerWidth + 'px';

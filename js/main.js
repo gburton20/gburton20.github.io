@@ -162,7 +162,7 @@ function openTabletNavMenu() {
     }
 }
 
-// TABLET-SPECIFIC NAV FOOTER MENU FUNCTIONS:
+// TABLET-SPECIFIC FOOTER MENU FUNCTIONS:
 function toggleTabletFooterMenu() {
     // Call the same generic function with footer-specific selectors
     toggleOverlayMenu(TABLET_FOOTER_OVERLAY_SELECTOR, TABLET_FOOTER_OVERLAY_X_ICON_SELECTOR);
@@ -175,7 +175,43 @@ function openTabletFooterMenu() {
     }
 }
 
-/* Note to self, when I've finished the code here, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */
+// END OF TABLET-SPECIFIC FOOTER MENU FUNCTIONS:
+
+
+// START - DESKTOP-SPECIFIC PORTFOLIO SECTION GSAP SCROLL TRIGGER ANIMATIONS
+// THUMBNAIL LEFT PORTFOLIO SECTION:
+// let thumbnailLeftPortfolioSectionContentDesktop = document.querySelector('desktop-portfolio-section-thumbnail-left-content');
+// THUMBNAIL RIGHT PORTFOLIO SECTION:
+// let thumbnailRightPortfolioSectionContentDesktop = document.querySelector('desktop-portfolio-section-thumbnail-right-content');
+
+function animateFrom(elem, direction) {
+  direction = direction || 1;
+  var x = 0,
+      y = direction * 100;
+  if(elem.classList.contains("desktop-portfolio-section-thumbnail-left-content") || elem.classList.contains("gs_reveal_fromLeft")) {
+    x = -100;
+    y = 0;
+  } else if (elem.classList.contains("desktop-portfolio-section-thumbnail-right-content") || elem.classList.contains("gs_reveal_fromRight")) {
+    x = 100;
+    y = 0;
+  }
+  elem.style.transform = "translate(" + x + "px, " + y + "px)";
+  elem.style.opacity = "0";
+  gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+    duration: 1.25, 
+    x: 0,
+    y: 0, 
+    autoAlpha: 1, 
+    ease: "expo", 
+    overwrite: "auto"
+  });
+}
+
+function hide(elem) {
+  gsap.set(elem, {autoAlpha: 0});
+}
+
+// END - DESKTOP-SPECIFIC PORTFOLIO SECTION GSAP SCROLL TRIGGER ANIMATIONS
 
 // Initialize mobile nav and footer menu when DOM is loaded after all functions have been declared, above.
 document.addEventListener('DOMContentLoaded', () => {
@@ -183,4 +219,22 @@ document.addEventListener('DOMContentLoaded', () => {
     openMobileFooterMenu();
     openTabletNavMenu();
     openTabletFooterMenu();
+
+    gsap.registerPlugin(ScrollTrigger);
+  
+    gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
+    hide(elem); // assure that the element is hidden when scrolled into view
+    
+    ScrollTrigger.create({
+      trigger: elem,
+      // markers: true,
+      onEnter: function() { animateFrom(elem) }, 
+      onEnterBack: function() { animateFrom(elem, -1) },
+      onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+    });
+  });
+
+  /* Note to self, when I've finished the code here, ask CoPilot for advice on how I can iterate to adhere to DRY principles  */
+
+
 });
